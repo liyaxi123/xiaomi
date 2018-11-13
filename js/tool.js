@@ -43,5 +43,5 @@ var tool={
                 $(this).parents('.zhezhao').css('display','none');
             })
          })
-    }
-}
+    },
+};

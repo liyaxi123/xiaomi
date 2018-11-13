@@ -1,6 +1,5 @@
 
 var login_page={
- 
     init: function(){
         this.login_in()
     },
@@ -30,14 +29,11 @@ var login_page={
                     },
                     error: function(err,type){
                         $('.login_in .err') .css({'visibility':'visible'}).text(type)   
-                    },
-                    
+                    },      
                 })
                }else{
                    $('.login_in .err') .css({'visibility':'visible'}).text(info.msg)
                }
-     
-
         })
     },
     validataInfo:function(data){
@@ -63,7 +59,6 @@ $(function(){
             'status|0-0':2,
             'msg|1':'服务端验证通过，登录成功',
             }]
-          
        })
     login_page.init();
-})
+});

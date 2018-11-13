@@ -4,20 +4,16 @@
         'status|0-0':2,
         'msg|1':'验证通过可以使用',
         }]
-      
-   }
-    
+   } 
    );
    Mock.mock('http://localhost/user/register_valid.do',{
        
          'status|0-0':2,
          'msg|1':'恭喜你注册成功'
          }
-      
     )
  //注册界面逻辑实现
- $(function(){
-        
+ $(function(){       
         $('input[id=r_user]').blur(function(){
             var username = $(this).val();
              if(!$(this).val()){
@@ -50,12 +46,9 @@
                })
              }
         });
-       
-
         $('.submits').click(function(){
             _submit();
         })
-
         function _submit(){
           
             var data = {
@@ -88,7 +81,6 @@
                $('.error').css({'visibility':'visible'}).text(info.msg)
            }
         }
-           
                 //判断手机和email的方法
                 function phoneEmail(data,type){
                     var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
@@ -109,8 +101,7 @@
                       } else{
                           return true
                        }
-                    }
-                    
+                    } 
                   }
                   return false
                   }
@@ -149,9 +140,7 @@
             return result;
         }
 
-
     $('.go_login').click(function(){
         window.location.href='./index.html'
-    }) 
-     
-      })
+        }) 
+      });

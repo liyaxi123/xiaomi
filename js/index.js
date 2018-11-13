@@ -1,6 +1,3 @@
-
-
-
 $(function () {
     var index = 1;
     $('.direct-right').click(function () {
@@ -11,10 +8,14 @@ $(function () {
         if (!$('.menu-photo-totol').is(':animated')) {
             ++index
             $('.menu-dot :nth-child(' + index + ')').addClass('white').siblings().removeClass('white')
-            $('.menu-photo-totol').animate({ 'left': '-=1200px' }, 1000, function () {
+            $('.menu-photo-totol').animate({
+                'left': '-=1200px'
+            }, 1000, function () {
                 var lef = parseInt($('.menu-photo-totol').css('left'));
                 if (lef === -6000) {
-                    $('.menu-photo-totol').css({ 'left': '0' })
+                    $('.menu-photo-totol').css({
+                        'left': '0'
+                    })
                 }
             })
 
@@ -25,16 +26,20 @@ $(function () {
         if (!$('.menu-photo-totol').is(':animated')) {
             if (lef == 0) {
                 index = 5
-                $('.menu-photo-totol').css({ 'left': '-6000px' })
-                $('.menu-photo-totol').animate({ 'left': '+=1200px' }, 1000)
+                $('.menu-photo-totol').css({
+                    'left': '-6000px'
+                })
+                $('.menu-photo-totol').animate({
+                    'left': '+=1200px'
+                }, 1000)
             } else {
                 --index
-                $('.menu-photo-totol').animate({ 'left': '+=1200px' }, 1000)
+                $('.menu-photo-totol').animate({
+                    'left': '+=1200px'
+                }, 1000)
             }
             $('.menu-dot :nth-child(' + index + ')').addClass('white').siblings().removeClass('white')
         }
-        //返回顶部
-
     });
 
     var timer = null;
@@ -52,36 +57,54 @@ $(function () {
         }, 2000)
     })
 })
-
-
 //指示点与图片实现联动
 $('.menu-dot span').click(function () {
     $this = $(this);
     $this.addClass('white').siblings().removeClass('white')
     $index = $this.index();
 
-    $('.menu-photo-totol').css({ 'left': -$index * 1200 + 'px' })
+    $('.menu-photo-totol').css({
+        'left': -$index * 1200 + 'px'
+    })
 });
 //下载app逻辑
 $('.nav-left').find('.app').hover(function () {
 
-    $('.trangle').css({ 'display': 'block' });
-    $('.erweima').css({ 'display': 'block' })
+    $('.trangle').css({
+        'display': 'block'
+    });
+    $('.erweima').css({
+        'display': 'block'
+    })
     console.log(111)
 }, function () {
-    $('.trangle').css({ 'display': 'none' });
-    $('.erweima').css({ 'display': 'none' })
+    $('.trangle').css({
+        'display': 'none'
+    });
+    $('.erweima').css({
+        'display': 'none'
+    })
 });
 //购物车模块显示逻辑
 $('.nav-right').children('.shopcar').hover(function () {
     $this = $(this);
-    $this.find('a,span').css({ 'color': 'red' })
-    $this.css({ 'background-color': 'white', 'color': 'red' })
+    $this.find('a,span').css({
+        'color': 'red'
+    })
+    $this.css({
+        'background-color': 'white',
+        'color': 'red'
+    })
     var $divs = $('<div class="shop_thing">空空如也~</div>');
     $divs.prependTo($this);
 }, function () {
-    $this.find('a,span').css({ 'color': '#999' });
-    $this.css({ 'background-color': 'black', 'color': '#bbb' });
+    $this.find('a,span').css({
+        'color': '#999'
+    });
+    $this.css({
+        'background-color': 'black',
+        'color': '#bbb'
+    });
     $('.shop_thing').remove()
 });
 //菜单导航栏div动态生成
@@ -100,7 +123,9 @@ $(function () {
                 h = 0;
             }
         }
-        var t = setTimeout(function () { getFullHour() }, 60000);
+        var t = setTimeout(function () {
+            getFullHour()
+        }, 60000);
         $('.time-start').find('.time').text(h + ':00');
     }
     getFullHour()
@@ -128,31 +153,36 @@ $(function () {
         $('.time-end .minute').text(m_new);
         $('.time-end .second').text(s_new);
 
-        var mer = setTimeout(function () { duringTime() }, 1000)
+        var mer = setTimeout(function () {
+            duringTime()
+        }, 1000)
 
     }
     duringTime();
 });
-    //搜索框搜索时间
-    $('.menu-search-button').click(function(){
-        var value = $('.menu-serach-content').val();
-        if(value==''){
-            return
-        }else{
-          window.location.href='./list.html?key='+value;  
-        }
-    });
-    $('.menu-serach-content').val(tool.getParam('key'))
-$('.woqu').hover(function(){
-    $('.people_phone').css({'display':'block'})
-},function(){
-    $('.people_phone').css({'display':'none'})
+//搜索框搜索时间
+$('.menu-search-button').click(function () {
+    var value = $('.menu-serach-content').val();
+    if (value == '') {
+        return
+    } else {
+        window.location.href = './list.html?key=' + value;
+    }
+});
+$('.menu-serach-content').val(tool.getParam('key'))
+$('.woqu').hover(function () {
+    $('.people_phone').css({
+        'display': 'block'
+    })
+}, function () {
+    $('.people_phone').css({
+        'display': 'none'
+    })
 })
 $(function () {
 
     var data = {
-        list: [
-            {
+        list: [{
                 'img': 'img/3G.png',
                 'dec': '小米路由',
                 'price': 99
@@ -197,8 +227,12 @@ $(function () {
         if (!$('.menu-middle-content').is(':animated')) {
             $('.menu-middle-content')
                 .stop(true)
-                .animate({ 'height': '300px' }, 1000, function () {
-                    $('.menu-middle-content').css({ 'box-shadow': '1px 0px 2px grey' })
+                .animate({
+                    'height': '300px'
+                }, 1000, function () {
+                    $('.menu-middle-content').css({
+                        'box-shadow': '1px 0px 2px grey'
+                    })
                 }).html(result);
         }
     }, function () {
@@ -210,10 +244,14 @@ $(function () {
 $(function () {
     $('.menu-side .menu-parent .meun-item').hover(function () {
         var $this = $(this);
-        $this.children('.menu-item-child').css({ 'display': 'block' })
+        $this.children('.menu-item-child').css({
+            'display': 'block'
+        })
     }, function () {
         var $this = $(this);
-        $this.children('.menu-item-child').css({ 'display': 'none' })
+        $this.children('.menu-item-child').css({
+            'display': 'none'
+        })
     })
 })
 //左右箭头控制图片滑动和明暗，小米闪购
@@ -227,14 +265,22 @@ $(function () {
 
             return;
         } else if (index == 2) {
-            $('.quick-control .pre-quick').css({ 'color': '#00000033' })
-            $('.quickshop-content .baoguo .quick-parent').animate({ 'left': "+=" + wid + 'px' }, function () {
+            $('.quick-control .pre-quick').css({
+                'color': '#00000033'
+            })
+            $('.quickshop-content .baoguo .quick-parent').animate({
+                'left': "+=" + wid + 'px'
+            }, function () {
                 --index
             })
         } else {
-            $('.quickshop-content .baoguo .quick-parent').animate({ 'left': "+=" + wid + 'px' }, function () {
+            $('.quickshop-content .baoguo .quick-parent').animate({
+                'left': "+=" + wid + 'px'
+            }, function () {
                 --index
-                $('.quick-control .next-quick').css({ 'color': 'black' })
+                $('.quick-control .next-quick').css({
+                    'color': 'black'
+                })
 
             })
 
@@ -249,14 +295,22 @@ $(function () {
             return;
         } else if (index == num) {
 
-            $('.quick-control .next-quick').css({ 'color': '#00000033' })
-            $('.quickshop-content .baoguo .quick-parent').animate({ 'left': "-=" + wid + 'px' }, function () {
+            $('.quick-control .next-quick').css({
+                'color': '#00000033'
+            })
+            $('.quickshop-content .baoguo .quick-parent').animate({
+                'left': "-=" + wid + 'px'
+            }, function () {
                 ++index
 
             })
         } else {
-            $('.quick-control .pre-quick').css({ 'color': 'black' })
-            $('.quickshop-content .baoguo .quick-parent').animate({ 'left': "-=" + wid + 'px' }, function () {
+            $('.quick-control .pre-quick').css({
+                'color': 'black'
+            })
+            $('.quickshop-content .baoguo .quick-parent').animate({
+                'left': "-=" + wid + 'px'
+            }, function () {
                 ++index
 
             })
@@ -286,11 +340,19 @@ $(function () {
 $(function () {
     $('.quick-parent.content-x .quick-item').hover(function () {
         var $this = $(this);
-        $(this).children('.left').css({ 'display': 'block' })
-        $(this).children('.right').css({ 'display': 'block' })
+        $(this).children('.left').css({
+            'display': 'block'
+        })
+        $(this).children('.right').css({
+            'display': 'block'
+        })
     }, function () {
-        $(this).children('.right').css({ 'display': 'none' })
-        $(this).children('.left').css({ 'display': 'none' })
+        $(this).children('.right').css({
+            'display': 'none'
+        })
+        $(this).children('.left').css({
+            'display': 'none'
+        })
     })
     var index = 1;
     $('.quick-item .right').click(function () {
@@ -301,7 +363,9 @@ $(function () {
         if (!$('.biaoji').is(':animated')) {
             ++index
             $('.quick-item .dot :nth-child(' + index + ')').addClass('white').siblings().removeClass('white')
-            $('.biaoji').animate({ 'left': '-=288px' }, 1000)
+            $('.biaoji').animate({
+                'left': '-=288px'
+            }, 1000)
 
         }
     })
@@ -312,7 +376,9 @@ $(function () {
                 return;
             } else {
                 --index
-                $('.biaoji').animate({ 'left': '+=288px' }, 1000)
+                $('.biaoji').animate({
+                    'left': '+=288px'
+                }, 1000)
                 $('.quick-item .dot :nth-child(' + index + ')').addClass('white').siblings().removeClass('white')
             }
         }
@@ -322,9 +388,10 @@ $(function () {
 //文字滚动特效
 $(function () {
     var t = null;
-    var b=null
+    var b = null
+
     function scrollText() {
-     
+
         t = setInterval(function () {
             var s = $('.text-s').scrollTop();
             $('.text-s').scrollTop(s + 1);
@@ -341,20 +408,20 @@ $(function () {
     };
     scrollText();
     $('.quick-item.text-s').mouseover(function () {
-        
-        clearInterval(t)
-      
-       }
-       
+
+            clearInterval(t)
+
+        }
+
     )
-    $('.quick-item.text-s').mouseout(function(){
-        scrollText();  
+    $('.quick-item.text-s').mouseout(function () {
+        scrollText();
     })
 })
 //翻转逻辑
 $(function () {
     $(".img-box").hover(function () { //鼠标移动的function
-        $(this).css("transform", "rotateY(180deg)");//鼠标移上去旋转180度
+        $(this).css("transform", "rotateY(180deg)"); //鼠标移上去旋转180度
 
         $(".font").css("display", "block"); //让back显示出来
         $(".back").hide(); //隐藏front
@@ -370,9 +437,13 @@ $(function () {
         var ch = $(window).scrollTop(); //滚动高度
 
         if (ch > 0) {
-            $('.gotop').css({ 'display': 'block' })
+            $('.gotop').css({
+                'display': 'block'
+            })
         } else {
-            $('.gotop').css({ 'display': 'none' })
+            $('.gotop').css({
+                'display': 'none'
+            })
         }
 
     })
@@ -385,21 +456,19 @@ $(function () {
 $(function () {
     //遮罩成出现
     $('.nav-item.login').click(function () {
-        $('.zhezhao').css({ 'display': 'block' });
+        $('.zhezhao').css({
+            'display': 'block'
+        });
     })
     //
-    $('.zhezhao').click(function(e){
-        if(e.target.className!='zhezhao'){
+    $('.zhezhao').click(function (e) {
+        if (e.target.className != 'zhezhao') {
             return;
-        }else{
-            $('.zhezhao').css({ 'display': 'none' }); 
+        } else {
+            $('.zhezhao').css({
+                'display': 'none'
+            });
         }
-       
+
     })
-})
-
-
-
-
-
-
+});

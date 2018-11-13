@@ -1,7 +1,5 @@
 var List = {
-    init: function(){
-        
-        
+    init: function(){    
       this.onLoad();
       this.shijian();
     },
@@ -50,26 +48,17 @@ var List = {
          });
     },
     onLoad: function(){
-
         $('.thing_content_list').html('<img src="./img/timg.gif" alt="加载中" />')
-      
         //搜索框搜索事件
-     
         if(!tool.getParam('key')){
           
             $('.keyname').text('手机');
             $('.menu-search-button').click()
         }else{
             $('.menu-serach-content').val(decodeURIComponent(tool.getParam('key')))
-            $('.keyname').text(decodeURIComponent(tool.getParam('key')));
-            
+            $('.keyname').text(decodeURIComponent(tool.getParam('key')));   
         }
     },
-       
-      
-        
-  
-  
 };
 $(function(){
     var act =['1折处理','2折处理','3折处理','4折处理','5折处理','6折处理','7折处理'];
