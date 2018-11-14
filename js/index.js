@@ -472,3 +472,14 @@ $(function () {
 
     })
 });
+// localstorage存储登录信息
+$(function(){
+    var username=localStorage.getItem('username');
+   if(username){
+       
+      $('.login .one').css({'display':'none'});
+      $('.login .two').css({'display':'inline-block'})
+      $('.login .two .username').text(username)
+   }
+    
+})

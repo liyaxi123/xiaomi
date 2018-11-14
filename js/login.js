@@ -18,6 +18,11 @@ var login_page={
               
                if(info.status){
                 // $('.login_in .err') .css({'visibility':'visible'}).text('恭喜您，登录成功')
+                if(window.localStorage){
+                    var storage  = window.localStorage;
+                    storage.username=data.username;
+                    storage.password=data.password;
+               }
                 $.ajax({
                     data:data,
                     method:    'post',
@@ -25,6 +30,7 @@ var login_page={
                          url:    'local.login.do',
                     success:    function(res){
                      $('.login_in .err') .css({'visibility':'visible'}).text(res.data.msg) ;
+                    
                      window.location.href='./index.html'  
                     },
                     error: function(err,type){
