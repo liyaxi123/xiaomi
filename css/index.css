@@ -169,11 +169,11 @@ ul{
     border-color:transparent;
     border-bottom: 5px solid white;
     position: absolute;
-    left: 580px;
+    left: 620px;
     display:none;
 }
-.nav .app{
-  
+.nav .app a{
+    color: red
 }
 .nav .app .erweima{
     position: absolute;
@@ -181,7 +181,7 @@ ul{
     height: 200px;
     text-align: center;
     background: white;
-    left: 490px;
+    left: 520px;
     top: 38px;
     display:none;
 }
@@ -211,7 +211,14 @@ ul{
     color:white;
 }
 .nav .shopcar{
-    padding-left: 20px;
+    padding-left: 20px;   
+}
+
+.nav-right :nth-child(2) a{
+    color: red
+}
+.nav .shopcar a{
+    color: red
 }
 .nav .shopcar i{
     padding-right:5px;
